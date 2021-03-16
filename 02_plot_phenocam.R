@@ -29,5 +29,4 @@ plot_phenocam <- function(dat, pred = NULL){
   } else {
     print("plot_phenocam: input data not provided")
   }
-  
 }
