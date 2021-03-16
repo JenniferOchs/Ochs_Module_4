@@ -18,5 +18,6 @@ fit_logistic <- function(dat, par){
   fit <- nls(gcc_mean ~ pred_logistic(theta = theta, x = doy), data = dat, start = list(theta = par))
   
   fit$m$getPars()
+#  
   
 }
