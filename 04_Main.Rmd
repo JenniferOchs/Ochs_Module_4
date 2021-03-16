@@ -2,12 +2,13 @@
 title: "04_Main.rmd"
 author: "Kira"
 date: "3/16/2021"
-output: html_document
+output:
+  pdf_document: default
+  html_document: default
 ---
 
-```{r setup, include=FALSE}
+```{r setup}
 knitr::opts_chunk$set(echo = TRUE)
-```
 
 library(tidyverse)
 library(lubridate)
@@ -16,7 +17,7 @@ library(lubridate)
 ## Load required functions
 if(file.exists("01_download_phenocam.R")) source("01_download_phenocam.R")
 if(file.exists("02_plot_phenocam.R"))     source("02_plot_phenocam.R")
-if(file.exists("03_logistic.R"))          source("03_logistic.R")
+if(file.exists("03_logistic_R.R"))          source("03_logistic_R.R")
 
 ## Download phenology data
 URL <- "http://phenocam.sr.unh.edu/data/archive/uiefprairie/ROI/uiefprairie_GR_1000_1day.csv"
@@ -44,3 +45,7 @@ pred <- tibble(date = dat$date,
 
 ## Visualize model and data
 plot_phenocam(dat, pred = pred)
+```
+
+
+
